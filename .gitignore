@@ -1,3 +1,13 @@
+# 1. Ignore EVERYTHING
+*
+
+# 2. But, unignore all directories
+# This is crucial so Git can still look inside folders
+!*/
+
+# 3. And, unignore all files that have an extension
+!*.*
+
 # Prerequisites
 *.d
 
@@ -39,3 +49,6 @@
 
 # debug information files
 *.dwo
+
+# unwanted folders that are generated in mac
+**/*.dSYM/
