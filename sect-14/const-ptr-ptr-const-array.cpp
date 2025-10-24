@@ -32,5 +32,19 @@ int main() {
 	// *constPtrToConst = 30; // Error: cannot modify value through pointer to const
 	// constPtrToConst = &value2; // Error: cannot change the address stored in const pointer
 
+
+	// Array of const pointer to const char
+	const char * students [] {
+		"Aarumugam",
+		"Banashankari",
+		"Charlie",
+		"Diana",
+		"Easwaran"
+	};
+	std::cout << "\nStudents List from Array of const pointer to const char:" << std::endl;
+	for (const auto & student : students) {
+		std::cout << " " << student << std::endl;
+	}
+
 	return 0;
 }
