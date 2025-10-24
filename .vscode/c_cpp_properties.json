@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "Mac",
+            "name": "Mac", // Your existing macOS configuration
             "includePath": [
                 "${workspaceFolder}/**"
             ],
@@ -10,6 +10,24 @@
             "cStandard": "c17",
             "cppStandard": "c++20",
             "intelliSenseMode": "macos-clang-arm64"
+        },
+        // 💡 WINDOWS CONFIGURATION ADDED 💡
+        {
+            "name": "Win",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            // Example path for MinGW GCC compiler on Windows
+            "compilerPath": "C:\\MinGW\\bin\\g++.exe", 
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            // Use the appropriate IntelliSense mode for your Windows compiler
+            "intelliSenseMode": "windows-gcc-x64" 
         }
     ],
     "version": 4
