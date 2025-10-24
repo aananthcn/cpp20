@@ -13,7 +13,7 @@
         },
         // 💡 WINDOWS CONFIGURATION ADDED 💡
         {
-            "name": "Win",
+            "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**"
             ],
@@ -23,7 +23,7 @@
                 "_UNICODE"
             ],
             // Example path for MinGW GCC compiler on Windows
-            "compilerPath": "C:\\MinGW\\bin\\g++.exe", 
+            "compilerPath": "C:\\_D\\Tools\\mingw64\\bin\\g++.exe", 
             "cStandard": "c17",
             "cppStandard": "c++20",
             // Use the appropriate IntelliSense mode for your Windows compiler
