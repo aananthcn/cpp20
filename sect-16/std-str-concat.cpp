@@ -23,5 +23,32 @@ int main() {
 	std::cout << "The cstr is : " << full_cstr << std::endl;
 	std::cout << "The full string is : " << full_string << std::endl;
 
+	std::string str1 = "The sky is so blue, the grass is so green. Kids are running everywhere.";
+	std::cout << "str1 = " << str1 << std::endl;
+	std::cout << "Length of str1: " << str1.length() << std::endl;
+	std::cout << "Capacity of str1: " << str1.capacity() << std::endl;
+	str1.reserve(200);
+	std::cout << "New capacity of str1 after reserve: " << str1.capacity() << std::endl;
+	str1.shrink_to_fit();
+	std::cout << "Capacity of str1 after shrink_to_fit: " << str1.capacity() << std::endl;
+	str1.clear();
+	std::cout << "Length of str1 after clear: " << str1.length() << std::endl;
+	std::cout << "Capacity of str1 after clear: " << str1.capacity() << std::endl;
+
+
+	// string comparison
+	std::string apple1{"apple"};
+	std::string apple2{"Apple"};
+
+	if (apple1 == apple2) {
+		std::cout << apple1 << " is equal to " << apple2 << std::endl;
+	} else if (apple1 > apple2) {
+		std::cout << apple1 << " is greater than " << apple2 << std::endl;
+	} else {
+		std::cout << apple1 << " is less than " << apple2 << std::endl;
+	}
+	std::cout << "ASCII value of 'a': " << static_cast<int>('a') << std::endl;
+	std::cout << "ASCII value of 'A': " << static_cast<int>('A') << std::endl;
+
 	return 0;
 }
