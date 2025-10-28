@@ -34,6 +34,7 @@ int main() {
 	str1.clear();
 	std::cout << "Length of str1 after clear: " << str1.length() << std::endl;
 	std::cout << "Capacity of str1 after clear: " << str1.capacity() << std::endl;
+	std::cout << "std::string::npos: " << std::string::npos << std::endl;
 
 
 	// string comparison
