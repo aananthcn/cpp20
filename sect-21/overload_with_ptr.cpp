@@ -1,19 +1,22 @@
 #include <iostream>
 
-void say_my_name(const std::string& name) {
-	std::cout << "My name is: " << name << std::endl;
+int sum(int* a, int* b) {
+	std::cout << "Pointer version called." << std::endl;
+	return (*a + *b);
 }
 
-void say_my_name(std::string name) {
-	std::cout << "My name is: " << name << std::endl;
+int sum(int a, int b) {
+	std::cout << "Pass by value version called." << std::endl;
+	return (a + b);
 }
+
 
 int main() {
-	std::string name = "Alice";
-	std::string& name_ref = name;
+	int x = 10;
+	int y = 20;
 
-	say_my_name(name_ref);  // Attempt to call the first overload (const reference)
-	say_my_name(name);      // Attempt to call the second overload (by value)
+	std::cout << "Sum of " << x << " and " << y << " is " << sum(&x, &y) << std::endl;
+	std::cout << "Sum of " << x << " and " << y << " is " << sum(x, y) << std::endl;
 
 	return 0;
 }
