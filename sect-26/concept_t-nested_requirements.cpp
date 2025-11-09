@@ -3,11 +3,11 @@
 template <typename T>
 concept TinyType = requires(T t) {
 	sizeof(T) < 4; // Simple requirement: Only enforces the syntax
-	requires sizeof(T) < 4; // Nested requirement: Enforces both syntax and semantics
+	requires sizeof(T) <= 4; // Nested requirement: Enforces both syntax and semantics
 };
 
 TinyType auto tiny_add(TinyType auto a, TinyType auto b) {
-	return a + b;
+	return a + b; // Addition here promotes to int if T is smaller than int (4 bytes)
 }
 
 int main() {
@@ -22,10 +22,10 @@ int main() {
 			  << static_cast<int>(tiny_add(char1, char2)) << std::endl;
 
 	// Uncommenting the following lines will cause a compilation error
-	double double1 = 15.5;
-	double double2 = 10.3;
-	std::cout << "Sum of " << double1 << " and " << double2 << " is " 
-			  << tiny_add(double1, double2) << std::endl;
+	// double double1 = 15.5;
+	// double double2 = 10.3;
+	// std::cout << "Sum of " << double1 << " and " << double2 << " is " 
+	// 		  << tiny_add(double1, double2) << std::endl;
 
 	return 0;
 }

@@ -22,5 +22,5 @@ void printTypeName() {
 
 int main() {
     printTypeName<MyContainer>();  // ✅ Works
-    printTypeName<NoValueType>(); // ❌ Compile-time error
+    // printTypeName<NoValueType>(); // ❌ Compile-time error
 }
