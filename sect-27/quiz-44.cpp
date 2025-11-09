@@ -40,15 +40,15 @@ void print_point2( Point* p){
 }
 
 void print_point3( const Point& p){
-    p.set_x(22.2);
-    std::cout << "Point[x : " << p.x() << ", y : " << p.y() << "]" ;
+    // p.set_x(22.2); 												    // ❌ Compile-time error
+    // std::cout << "Point[x : " << p.x() << ", y : " << p.y() << "]" ; // ❌ Compile-time error
 }
 
 int main()
 {
     const Point p1(21.2,4.2);
     print_point(p1);
-	//print_point2(&p1);
+	//print_point2(&p1); // ❌ Compile-time error
 	print_point3(p1);
 
     return 0;

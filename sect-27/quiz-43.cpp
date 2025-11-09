@@ -36,6 +36,6 @@ void print_point( Point& p){
 int main()
 {
     const Point p1(21.2,4.2);
-    print_point(p1); 
+    // print_point(p1); // ❌ Compile-time error: cannot bind non-const lvalue reference of type 'Point&' to an rvalue of type 'Point'
     return 0;
 }
