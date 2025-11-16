@@ -37,7 +37,7 @@
         {
             "type": "cppbuild",
             "label": "C/C++: g++.exe build active file",
-            "command": "C:\\_D\\Tools\\mingw64\\bin\\g++.exe",
+            "command": "C:/msys64/mingw64/bin/g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-std=c++20",
