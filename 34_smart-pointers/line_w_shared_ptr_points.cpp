@@ -41,10 +41,16 @@ private :
 int main() {
 	std::shared_ptr<Point> p1 = std::make_shared<Point>(1,1);
     std::shared_ptr<Point> p2 = std::make_shared<Point>(2,2);
+	std::cout << "use_count of p1 = " << p1.use_count() << std::endl;
 
     {
-	    Line l1(p1, p2);
+	    Line l1(p1, p2); // the use_count of p1 will go to 2 here
+		std::shared_ptr<Point> p1_1 = p1; // use_count of p1 goes to 3 here
+		std::cout << "use_count of p1 = " << p1.use_count() << std::endl;
     } // l1 must get destroyed here.
+
+	// the use_count of p1 will drop to 1 here
+	std::cout << "use_count of p1 = " << p1.use_count() << std::endl;
 
 	return 0; // both p1 and p2 must gets destroyed here.
 }
