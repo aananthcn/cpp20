@@ -4,8 +4,8 @@
         {
             // NEW: Simplified Task for macOS/Linux (uses /usr/bin/g++)
             "type": "shell",
-            "label": "C/C++: g++ build active file (Mac/Linux)",
-            "command": "/usr/bin/g++",
+            "label": "C/C++: clang++ build active file (Mac/Linux)",
+            "command": "/usr/bin/clang++",
             "args": [
                 "-fdiagnostics-color=always",
                 "-std=c++20",

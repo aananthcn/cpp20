@@ -21,29 +21,23 @@
         }
       ]
     },
-    // NEW macOS GDB Configuration with your path
+    // Corrected macOS LLDB Configuration
     {
-        "name": "Debug Current File (GDB - Mac)",
-        "type": "cppdbg",
+        "name": "Debug Current File (LLDB - Mac)",
+        "type": "lldb",
         "request": "launch",
-        // Change to forward slashes and remove the .exe extension
-        "program": "${fileDirname}/${fileBasenameNoExtension}", 
+        "program": "${fileDirname}/${fileBasenameNoExtension}",
         "args": [],
-        "stopAtEntry": false,
         "cwd": "${fileDirname}",
-        "environment": [],
-        // Set to true to launch in a separate Terminal window
-        "externalConsole": true, 
-        "MIMode": "gdb",
-        // *** UPDATED PATH FOR APPLE SILICON HOMEBREW ***
-        "miDebuggerPath": "/opt/homebrew/bin/gdb", 
-        "setupCommands": [
-            {
-                "description": "Enable pretty-printing for gdb",
-                "text": "-enable-pretty-printing",
-                "ignoreFailures": true
-            }
-        ]
+        "console": "externalTerminal", // <-- Corrected property name
+        "env": {}, // <-- Corrected property name (empty object for no environment variables)
+        "initCommands": [
+            "settings set target.language c++20"
+        ],
+        "preRunCommands": [
+            "breakpoint set --name main" // <-- Replaces stopAtEntry: true
+        ],
+        "preLaunchTask": "C/C++: clang++ build active file (Mac/Linux)"
     }
   ]
 }
