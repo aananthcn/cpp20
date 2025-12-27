@@ -53,3 +53,6 @@
 # unwanted folders that are generated in mac
 **/*.dSYM/
 **/.DS_Store
+
+# C++ Module intermediate file
+*.pcm
